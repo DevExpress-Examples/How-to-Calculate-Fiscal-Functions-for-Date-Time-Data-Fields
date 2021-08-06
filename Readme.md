@@ -38,9 +38,8 @@ Returns the year of input **DateTime** if it comes before a new fiscal year begi
 
 ### Fiscal Week Function
 
-1. The `Beginning` method sets the start date of the first week in the input year.
-2. If start date is more, than input date, the program calculates start date for the previouse fiscal year.
-4. The function calculates the result as a sum of a difference between the start and input dates and the day of week offset from the first day of week divided by 7.
+* The `Beginning` method sets the start date of the first week in the input year. If start date is more, than input date, the program calculates start date for the previouse fiscal year.
+* The function calculates the result as a sum of a difference between the start and input dates and the day of week offset from the first day of week divided by 7.
  
 ## Documentation
 - [DateTime](https://docs.microsoft.com/ru-ru/dotnet/api/system.datetime?view=net-5.0)
