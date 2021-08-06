@@ -4,17 +4,17 @@
 * [Form1.cs](./CS/Dashboard_FiscalFunctions/Form1.cs)
 * [Fiscal Functions](./CS/Dashboard_FiscalFunctions/Fiscal%20Functions)
 <!-- default file list end -->
-# Dashboard for WinForms - How to Count Fiscal Functions for DateTime Fields.
+# Dashboard for WinForms - How to Calculate Fiscal Functions for Date-Time Data Fields.
 
-This example shows how to find the number of the fiscal year, quarter or week for input **DateTime**.
+This example shows how to find the number of a fiscal year, quarter, and week for date-time data fields.
 
-## Example Structure
+## Overview
 
-In this example, the [Grid](https://docs.devexpress.com/Dashboard/15150/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/dashboard-item-settings/grid) dashboard item displays fiscal year, quarter and week for the corresponding date. Date fields (Date, and all fiscal values (were counted when fiscal year starts on the 1 of October)) are placed in the [Columns](https://docs.devexpress.com/Dashboard/15166/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/dashboard-item-settings/grid/columns) section, price and quantity fields are placed there too for more clarity.
+In this example, the [Grid](https://docs.devexpress.com/Dashboard/15150/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/dashboard-item-settings/grid) dashboard item displays the fiscal year, quarter and week for the corresponding date. 
 
-![screenshot](./images/salesDynamisc.png)
+![SalesDynamics](images/salesDynamisc.png)
 
-The following expressions count the fiscal values for the corresponding date.
+The following expressions calculate fiscal values for the corresponding date.
 
 | Calculated Field | Expression |
 | --- | --- |
@@ -22,24 +22,25 @@ The following expressions count the fiscal values for the corresponding date.
 | Fiscal Quarter | ``` GetFiscalQuarter([OrderDate]) ``` |
 | Fiscal Week of Year | ``` GetFiscalWeekOfYear([OrderDate]) ``` |
 
-The final result you can see here:
+![FinalResult](images/finalResult.jpg)
 
-![screenshot](./images/finalResult.jpg)
+## Example Structure
 
-## Code Explanation
-All Fiscal methods extend **GetFiscalDateFunction** and override _GetFiscal_ which is used to count fiscal values. 
+All Fiscal methods extend `GetFiscalDateFunction` and override the `GetFiscal` method used to calculate fiscal values. 
 
-### Fiscal Year
-Returns the year of input **DateTime** if it comes before new fiscal year beginning date, otherwise returns the year plus 1.
+### Fiscal Year Function
 
-### Fiscal Quarter
-* If difference between input **DateTime** month and ```startMonth``` field not divisible by 3 returns the whole fraction of the difference by 3 plus 1 (considering the offset).
-* Otherwise calculates the result for the previous or next month of given **DateTime** depending on whether input **DateTime** day is less or more, than ```startDay``` field.
+Returns the year of input **DateTime** if it comes before a new fiscal year beginning date; otherwise returns the year plus 1.
 
-### Fiscal Week
-1. ``` DateTime Beginning(int currentYear) ``` defines the start date of the first week of the input year.
-2. If start date is less, than input date ``` start = Beginning(current.Year) ```, otherwise ``` start = Beginning(current.Year - 1) ```.
-3. The result calculates as difference between start and input dates plus start day of week offset from the first day of week divided by 7.
+### Fiscal Quarter Function
+
+* If a difference between the input **DateTime** month, and the `startMonth` field not divisible by 3, the `GetFiscal` method returns the whole fraction of the difference by 3 plus 1; otherwise the fiscal quarter function calculates the result for the previous or next month of given **DateTime** depending on whether the input **DateTime** day is less or more than the `startDay` field.
+
+### Fiscal Week Function
+
+1. The `Beginning` method sets the start date of the first week in the input year.
+2. If start date is less, than input date ``` start = Beginning(current.Year) ```; otherwise ``` start = Beginning(current.Year - 1) ```.
+3. The function calculates the result as a sum of a difference between the start and input dates and the day of week offset from the first day of week divided by 7.
  
 ## Documentation
 - [DateTime](https://docs.microsoft.com/ru-ru/dotnet/api/system.datetime?view=net-5.0)
