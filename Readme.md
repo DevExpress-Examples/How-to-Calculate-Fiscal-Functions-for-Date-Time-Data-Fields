@@ -34,7 +34,7 @@ Returns the year of input **DateTime** if it comes before a new fiscal year begi
 
 ### Fiscal Quarter Function
 
-* If a difference between the input **DateTime** month, and the `startMonth` field not divisible by 3, the `GetFiscal` method returns the whole fraction of the difference by 3 plus 1; otherwise the fiscal quarter function calculates the result for the previous or next month of given **DateTime** depending on whether the input **DateTime** day is less or more than the `startDay` field.
+If a difference between the input **DateTime** month, and the `startMonth` field not divisible by 3, the `GetFiscal` method returns the whole fraction of the difference by 3 plus 1; otherwise the fiscal quarter function calculates the result for the previous or next month of given **DateTime** depending on whether the input **DateTime** day is less or more than the `startDay` field.
 
 ### Fiscal Week Function
 
