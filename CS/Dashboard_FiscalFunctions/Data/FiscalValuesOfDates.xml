@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource Name="SQL Data Source 1" ComponentName="dashboardSqlDataSource1" DataProcessingMode="Client">
+      <Connection Name="nwind" ProviderKey="InMemorySetFull">
+        <Parameters>
+          <Parameter Name="database" Value="..\..\Data\nwind.xml" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+        </Parameters>
+      </Connection>
+      <Query Type="SelectQuery" Name="Orders">
+        <Tables>
+          <Table Name="Orders" />
+          <Table Name="[Order Details]" />
+          <Relation Type="Inner" Parent="Orders" Nested="[Order Details]">
+            <KeyColumn Parent="OrderID" Nested="OrderID" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="Orders" Name="OrderDate" />
+          <Column Table="[Order Details]" Name="UnitPrice" />
+          <Column Table="[Order Details]" Name="Quantity" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="Orders">
+            <Field Name="OrderDate" Type="DateTime" />
+            <Field Name="UnitPrice" Type="Decimal" />
+            <Field Name="Quantity" Type="Int16" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" DbCommandTimeout="300" />
+      <CalculatedFields>
+        <CalculatedField Name="Fiscal Year" Expression="GetFiscalYear([OrderDate])" DataType="Auto" DataMember="Orders" />
+        <CalculatedField Name="Fiscal Quarter" Expression="GetFiscalQuarter([OrderDate])" DataType="Auto" DataMember="Orders" />
+        <CalculatedField Name="Fiscal Week of Year" Expression="GetFiscalWeekOfYear([OrderDate])" DataType="Auto" DataMember="Orders" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" DataSource="dashboardSqlDataSource1" DataMember="Orders">
+      <DataItems>
+        <Dimension DataMember="OrderDate" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem0" />
+        <Dimension DataMember="Fiscal Year" DefaultId="DataItem1">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+        </Dimension>
+        <Dimension DataMember="Fiscal Quarter" DefaultId="DataItem2" />
+        <Dimension DataMember="Fiscal Week of Year" DefaultId="DataItem3" />
+        <Measure DataMember="Quantity" SummaryType="Count" DefaultId="DataItem4" />
+        <Measure DataMember="UnitPrice" DefaultId="DataItem5" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure DefaultId="DataItem4" />
+        </GridMeasureColumn>
+        <GridMeasureColumn>
+          <Measure DefaultId="DataItem5" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="24.969987995198078" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
