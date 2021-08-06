@@ -22,8 +22,6 @@ The following expressions calculate fiscal values for the corresponding date.
 | Fiscal Quarter | ``` GetFiscalQuarter([OrderDate]) ``` |
 | Fiscal Week of Year | ``` GetFiscalWeekOfYear([OrderDate]) ``` |
 
-![FinalResult](images/finalResult.jpg)
-
 ## Example Structure
 
 All Fiscal methods extend `GetFiscalDateFunction` and override the `GetFiscal` method used to calculate fiscal values. 
