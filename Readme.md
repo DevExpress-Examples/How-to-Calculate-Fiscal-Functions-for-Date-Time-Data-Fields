@@ -24,7 +24,7 @@ The following expressions calculate fiscal values for the corresponding date:
 
 The following code snippet shows how to register fiscal functions: 
 
-[Program.cs](./CS/Dashboard_FiscalFunctions/Form1.cs):
+[Program.cs](./CS/Dashboard_FiscalFunctions/Program.cs):
 ```csharp
 using System;
 using System.Windows.Forms
