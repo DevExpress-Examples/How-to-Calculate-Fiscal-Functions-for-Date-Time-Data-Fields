@@ -14,7 +14,7 @@ In this example, the [Grid](https://docs.devexpress.com/Dashboard/15150/winforms
 
 ![SalesDynamics](images/salesDynamisc.png)
 
-The following expressions calculate fiscal values for the corresponding date.
+The following expressions calculate fiscal values for the corresponding date:
 
 | Calculated Field | Expression |
 | --- | --- |
@@ -32,11 +32,11 @@ Returns the year of input **DateTime** if it comes before a new fiscal year begi
 
 ### Fiscal Quarter Function
 
-If a difference between the input **DateTime** month, and the `startMonth` field not divisible by 3, the `GetFiscal` method returns the whole fraction of the difference by 3 plus 1; otherwise the fiscal quarter function calculates the result for the previous or next month of given **DateTime** depending on whether the input **DateTime** day is less or more than the `startDay` field.
+If the diference between the input **DateTime** month and the `startMonth` field is not divisible by 3, the `GetFiscal` method returns the whole fraction of the difference by 3 plus 1; otherwise the fiscal quarter function calculates the result for the previous or next month of given **DateTime** depending on whether the input **DateTime** day is less or more than the `startDay` field.
 
 ### Fiscal Week Function
 
-* The `Beginning` method sets the start date of the first week in the input year. If start date is more, than input date, the program calculates start date for the previouse fiscal year.
+* The `Beginning` method sets the start date of the first week in the input year. If start date is more than input date, the program calculates start date for the previous fiscal year.
 * The function calculates the result as a sum of a difference between the start and input dates and the day of week offset from the first day of week divided by 7.
  
 ## Documentation
