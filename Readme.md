@@ -39,5 +39,5 @@ CriteriaOperator.RegisterCustomFunction(New GetFiscalWeekOfYearFunction((first d
 ```
  
 ## Documentation
-- [DateTime](https://docs.microsoft.com/ru-ru/dotnet/api/system.datetime?view=net-5.0)
+- [DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
 - [Expression Constants, Operators, and Functions](https://docs.devexpress.com/Dashboard/400122/common-features/advanced-analytics/expression-constants-operators-and-functions)
