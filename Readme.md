@@ -53,19 +53,19 @@ Imports DevExpress.Data.Filtering
 Imports System.Globalization
 
 Namespace Dashboard_FiscalFunctions
-	Friend Module Program
-		''' <summary>
-		''' The main entry point for the application.
-		''' </summary>
-		<STAThread>
-		Sub Main()
-		' ...
-		CriteriaOperator.RegisterCustomFunction(New GetFiscalYearFunction(1, 10))
-		CriteriaOperator.RegisterCustomFunction(New GetFiscalQuarterFunction(1, 10))
-		CriteriaOperator.RegisterCustomFunction(New GetFiscalWeekOfYearFunction(1, 10, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday))
-		Application.Run(New Form1())
-		End Sub
-	End Module
+    Friend Module Program
+	''' <summary>
+	''' The main entry point for the application.
+	''' </summary>
+	<STAThread>
+	Sub Main()
+	' ...
+	    CriteriaOperator.RegisterCustomFunction(New GetFiscalYearFunction(1, 10))
+	    CriteriaOperator.RegisterCustomFunction(New GetFiscalQuarterFunction(1, 10))
+	    CriteriaOperator.RegisterCustomFunction(New GetFiscalWeekOfYearFunction(1, 10, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday))
+	    Application.Run(New Form1())
+	End Sub
+    End Module
 End Namespace
 ```
  
