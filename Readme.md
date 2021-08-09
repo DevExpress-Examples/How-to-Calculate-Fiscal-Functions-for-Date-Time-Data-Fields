@@ -47,7 +47,7 @@ namespace Dashboard_FiscalFunctions {
     }
 }
 ```
-[Program.vb](./CS/Dashboard_FiscalFunctions/Program.vb):
+[Program.vb](./VB/Dashboard_FiscalFunctions/Program.vb):
 ```vb
 Imports DevExpress.Data.Filtering
 Imports System.Globalization
