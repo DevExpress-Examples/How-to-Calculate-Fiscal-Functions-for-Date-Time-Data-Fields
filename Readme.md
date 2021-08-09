@@ -22,7 +22,7 @@ The following expressions calculate fiscal values for the corresponding date:
 | Fiscal Quarter | ``` GetFiscalQuarter([OrderDate]) ``` |
 | Fiscal Week of Year | ``` GetFiscalWeekOfYear([OrderDate]) ``` |
 
-The following code snippet shows how to register fiscal functions: 
+Call the [CriteriaOperator.RegisterCustomFunction](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.CriteriaOperator.RegisterCustomFunction(DevExpress.Data.Filtering.ICustomFunctionOperator)) method to register custom functions in your project. The following code snippet shows how to register fiscal functions: 
 
 [Program.cs](./CS/Dashboard_FiscalFunctions/Program.cs):
 ```csharp
