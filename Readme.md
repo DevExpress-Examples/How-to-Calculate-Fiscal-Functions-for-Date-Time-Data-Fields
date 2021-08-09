@@ -6,7 +6,7 @@
 <!-- default file list end -->
 # Dashboard for WinForms - How to Calculate Fiscal Functions from Date-Time Data Fields
 
-This example shows how to create and register custom functions that calculate the fiscal year, quarter, and week from date-time data fields.
+This example shows how to create and register custom functions that calculate the fiscal year, quarter, and week from date-time data fields. These custom functions implement the [ICustomFunctionOperatorBrowsable](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.ICustomFunctionOperatorBrowsable) interface. The interface allows you to create a function that can be used for custom calculations on the client. Refer to the [Custom Functions](https://docs.devexpress.com/WindowsForms/9947/common-features/expressions/implementing-custom-functions) article for more information.
 
 ## Overview
 
