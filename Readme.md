@@ -6,15 +6,15 @@
 <!-- default file list end -->
 # Dashboard for WinForms - How to Calculate Fiscal Functions for Date-Time Data Fields.
 
-This example shows how to create and register custom functions that calculates fiscal year, quarter, and week from DateTime data fields.
+This example shows how to create and register custom functions that calculate fiscal year, quarter, and week from DateTime data fields.
 
 ## Overview
 
-In this example, the [Grid](https://docs.devexpress.com/Dashboard/15150/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/dashboard-item-settings/grid) dashboard item displays the fiscal year, quarter and week for the corresponding date. 
+In this example, the [Grid](https://docs.devexpress.com/Dashboard/15150/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/dashboard-item-settings/grid) dashboard item displays the fiscal year, quarter, and week for the corresponding date. 
 
 ![SalesDynamics](images/salesDynamisc.png)
 
-The following expressions calculate fiscal values for the corresponding date.
+The following expressions calculate fiscal values for the corresponding date:
 
 | Calculated Field | Expression |
 | --- | --- |
@@ -22,11 +22,20 @@ The following expressions calculate fiscal values for the corresponding date.
 | Fiscal Quarter | ``` GetFiscalQuarter([OrderDate]) ``` |
 | Fiscal Week of Year | ``` GetFiscalWeekOfYear([OrderDate]) ``` |
 
-To register fiscal functions you should write in code: 
-```
+The following code snippet shows how to register fiscal functions: 
+
+**C# code**:
+```csharp
 CriteriaOperator.RegisterCustomFunction(new GetFiscalYearFunction([first day of year], [first month of year]));
 CriteriaOperator.RegisterCustomFunction(new GetFiscalQuarterFunction([first day of year], [first month of year]));
 CriteriaOperator.RegisterCustomFunction(new GetFiscalWeekOfYearFunction([first day of year], [first month of year], [CalendarWeekRule showing how to define the first week], [The first day of week]));
+```
+**VB code**: 
+```vb
+CriteriaOperator.RegisterCustomFunction(New GetFiscalYearFunction((first day [of] year), (first month [of] year)))
+CriteriaOperator.RegisterCustomFunction(New GetFiscalQuarterFunction((first day [of] year), (first month [of] year)))
+CriteriaOperator.RegisterCustomFunction(New GetFiscalWeekOfYearFunction((first day [of] year), (first month [of] year), (CalendarWeekRule showing how [to] define the first week), (The first day [of] week)))
+
 ```
  
 ## Documentation
