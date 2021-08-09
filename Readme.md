@@ -1,8 +1,8 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [Form1.cs](./CS/Dashboard_FiscalFunctions/Form1.cs)
-* [Fiscal Functions](./CS/Dashboard_FiscalFunctions/Fiscal%20Functions)
+* [Form1.cs](./CS/Dashboard_FiscalFunctions/Form1.cs) ([Form1.vb](./VB/Dashboard_FiscalFunctions/Form1.vb))
+* [Fiscal Functions](./CS/Dashboard_FiscalFunctions/Fiscal%20Functions) (VB:[Fiscal Functions](./VB/Dashboard_FiscalFunctions/Fiscal%20Functions))
 <!-- default file list end -->
 # Dashboard for WinForms - How to Calculate Fiscal Functions for Date-Time Data Fields.
 
