@@ -24,18 +24,49 @@ The following expressions calculate fiscal values for the corresponding date:
 
 The following code snippet shows how to register fiscal functions: 
 
-**C# code**:
+**Program.cs**:
 ```csharp
-CriteriaOperator.RegisterCustomFunction(new GetFiscalYearFunction([first day of year], [first month of year]));
-CriteriaOperator.RegisterCustomFunction(new GetFiscalQuarterFunction([first day of year], [first month of year]));
-CriteriaOperator.RegisterCustomFunction(new GetFiscalWeekOfYearFunction([first day of year], [first month of year], [CalendarWeekRule showing how to define the first week], [The first day of week]));
+using System;
+using System.Windows.Forms
+using DevExpress.Data.Filtering;
+using System.Globalization;
+namespace Dashboard_FiscalFunctions {
+    static class Program {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main() {
+        // ...
+            CriteriaOperator.RegisterCustomFunction(new GetFiscalYearFunction(1, 10));
+            CriteriaOperator.RegisterCustomFunction(new GetFiscalQuarterFunction(1, 10));
+            CriteriaOperator.RegisterCustomFunction(new GetFiscalWeekOfYearFunction(1, 10, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday));
+            Application.Run(new Form1());  
+        }
+    }
+}
 ```
-**VB code**: 
+**Program.vb 
 ```vb
-CriteriaOperator.RegisterCustomFunction(New GetFiscalYearFunction((first day [of] year), (first month [of] year)))
-CriteriaOperator.RegisterCustomFunction(New GetFiscalQuarterFunction((first day [of] year), (first month [of] year)))
-CriteriaOperator.RegisterCustomFunction(New GetFiscalWeekOfYearFunction((first day [of] year), (first month [of] year), (CalendarWeekRule showing how [to] define the first week), (The first day [of] week)))
+Imports DevExpress.Data.Filtering
+Imports System.Globalization
 
+Namespace Dashboard_FiscalFunctions
+	Friend Module Program
+		''' <summary>
+		''' The main entry point for the application.
+		''' </summary>
+		<STAThread>
+		Sub Main()
+  ' ...
+    CriteriaOperator.RegisterCustomFunction(New GetFiscalYearFunction(1, 10))
+    CriteriaOperator.RegisterCustomFunction(New GetFiscalQuarterFunction(1, 10))
+    CriteriaOperator.RegisterCustomFunction(New GetFiscalWeekOfYearFunction(1, 10, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday))
+    Application.Run(New Form1())
+
+		End Sub
+	End Module
+End Namespace
 ```
  
 ## Documentation
