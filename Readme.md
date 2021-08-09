@@ -4,7 +4,7 @@
 * [Form1.cs](./CS/Dashboard_FiscalFunctions/Form1.cs) ([Form1.vb](./VB/Dashboard_FiscalFunctions/Form1.vb))
 * [Fiscal Functions](./CS/Dashboard_FiscalFunctions/Fiscal%20Functions) (VB: [Fiscal Functions](./VB/Dashboard_FiscalFunctions/Fiscal%20Functions))
 <!-- default file list end -->
-# Dashboard for WinForms - How to Calculate Fiscal Functions for Date-Time Data Fields
+# Dashboard for WinForms - How to Calculate Fiscal Functions from Date-Time Data Fields
 
 This example shows how to create and register custom functions that calculate the fiscal year, quarter, and week from date-time data fields.
 
