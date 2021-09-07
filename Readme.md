@@ -8,10 +8,11 @@
 
 * [Form1.cs](./CS/Dashboard_FiscalFunctions/Form1.cs) ([Form1.vb](./VB/Dashboard_FiscalFunctions/Form1.vb))
 * [Fiscal Functions](./CS/Dashboard_FiscalFunctions/Fiscal%20Functions) (VB: [Fiscal Functions](./VB/Dashboard_FiscalFunctions/Fiscal%20Functions))
+* [Program.cs](./CS/Dashboard_FiscalFunctions/Program.cs#L24-L26) ([Program.vb](./VB/Dashboard_FiscalFunctions/Program.vb#L24-L26))
 <!-- default file list end -->
 # Dashboard for WinForms - How to Calculate Fiscal Functions from Date-Time Data Fields
 
-This example shows how to create and register custom functions that calculate the fiscal year, quarter, and week from date-time data fields. These custom functions implement the [ICustomFunctionOperatorBrowsable](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.ICustomFunctionOperatorBrowsable) interface. The interface allows you to create a function that can be used for custom calculations in [client mode](https://docs.devexpress.com/Dashboard/17083/basic-concepts-and-terminology/data-processing-modes). Refer to the [Custom Functions](https://docs.devexpress.com/WindowsForms/9947/common-features/expressions/implementing-custom-functions) article for more information.
+This example shows how to create and register custom functions that calculate the fiscal year, quarter, and week from date-time data fields in a client mode. These custom functions implement the [ICustomFunctionOperatorBrowsable](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.ICustomFunctionOperatorBrowsable) interface. The interface allows you to create a function that can be used for custom calculations in [client mode](https://docs.devexpress.com/Dashboard/17083/basic-concepts-and-terminology/data-processing-modes). Refer to the [Custom Functions](https://docs.devexpress.com/WindowsForms/9947/common-features/expressions/implementing-custom-functions) article for more information.
 
 ## Overview
 
@@ -27,7 +28,7 @@ The following expressions calculate fiscal values for the corresponding date:
 | Fiscal Quarter | ``` GetFiscalQuarter([OrderDate]) ``` |
 | Fiscal Week of Year | ``` GetFiscalWeekOfYear([OrderDate]) ``` |
 
-Call the [CriteriaOperator.RegisterCustomFunction](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.CriteriaOperator.RegisterCustomFunction(DevExpress.Data.Filtering.ICustomFunctionOperator)) method to register custom functions in your project. The following code snippet shows how to register fiscal functions: 
+Call the [CriteriaOperator.RegisterCustomFunction](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.CriteriaOperator.RegisterCustomFunction(DevExpress.Data.Filtering.ICustomFunctionOperator)) method to register custom functions in your project (see: [Program.cs](./CS/Dashboard_FiscalFunctions/Program.cs#L24-L26)/[Program.vb](./VB/Dashboard_FiscalFunctions/Program.vb#L24-L26).  
 
 [Program.cs](./CS/Dashboard_FiscalFunctions/Program.cs):
 ```csharp
