@@ -8,13 +8,11 @@
 
 This example shows how to create and register custom functions that calculate the fiscal year, quarter, and week from date-time data fields in a client mode. These custom functions implement the [ICustomFunctionOperatorBrowsable](https://docs.devexpress.com/CoreLibraries/DevExpress.Data.Filtering.ICustomFunctionOperatorBrowsable) interface. The interface allows you to create a function that can be used for custom calculations in [client mode](https://docs.devexpress.com/Dashboard/17083/basic-concepts-and-terminology/data-processing-modes). Refer to the [Custom Functions](https://docs.devexpress.com/WindowsForms/9947/common-features/expressions/implementing-custom-functions) article for more information.
 
-<!-- default file list -->
-## Files to Look At
+## Files to Review
 
 * [Form1.cs](./CS/Dashboard_FiscalFunctions/Form1.cs) ([Form1.vb](./VB/Dashboard_FiscalFunctions/Form1.vb))
 * [Fiscal Functions](./CS/Dashboard_FiscalFunctions/Fiscal%20Functions) (VB: [Fiscal Functions](./VB/Dashboard_FiscalFunctions/Fiscal%20Functions))
 * [Program.cs](./CS/Dashboard_FiscalFunctions/Program.cs#L24-L26) ([Program.vb](./VB/Dashboard_FiscalFunctions/Program.vb#L24-L26))
-<!-- default file list end -->
 
 ## Overview
 
